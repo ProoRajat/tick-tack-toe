@@ -87,6 +87,19 @@ int CheckGame(char arr[][3])
             return (winnerChecker == 'X') ? 1 : 2;
     }
 
+    for (int i = 0; i < 2; i++)
+    {
+        char winnerChecker = inputs[i];
+        bool flag = true;
+        for (int j = 0; j < 3; j++)
+        {
+            if (arr[j][2-j] != winnerChecker)
+                flag = false;
+        }
+        if (flag)
+            return (winnerChecker == 'X') ? 1 : 2;
+    }
+
     return 3;
 }
 
